@@ -30,7 +30,8 @@ namespace MusicPlayer {
             //Titulo do botão
             ofOpen.Title = "Abrir mídia";
             //Filtro
-            ofOpen.Filter = "Arquivo mp4|*.mp4|Arquivo mp3|*.mp3";
+            ofOpen.Filter = "Arquivo mp4|*.mp4";
+            ofOpen.Filter = "Arquivo mp3|*.mp3";
             //Caixa de dialogo para o usuario selecionar os arquivos de audio ou de video
             //Se o usuario selecionou um arquivo
             if (ofOpen.ShowDialog() == DialogResult.OK) {
@@ -106,6 +107,83 @@ namespace MusicPlayer {
             //Se tiver executando algo ja da um stop
             player.Ctlcontrols.stop();
             listPlayList.Items.Clear();
+        }
+
+        private void button4_Click(object sender, EventArgs e) {
+            //Para cada item selecionado
+            foreach (var items in officialPlaylist.SelectedItems) {
+                //Adiciona cada item na playlist provisoria
+                listPlayList.Items.Add(items);
+            }
+            //Para cada item selecionado na playlist oficial 
+            for (int i = officialPlaylist.SelectedItems.Count - 1; i >= 0; i--) {
+                //Remove o item na posição i
+                officialPlaylist.Items.Remove(officialPlaylist.SelectedItems[i]);
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e) {
+            //Paraos items na playlist provisoria
+            foreach (var items in listPlayList.Items) {
+                //Adiciona os items na playlist oficial
+                officialPlaylist.Items.Add(items);
+            }
+
+            listPlayList.Items.Clear();
+        }
+
+        private void oneFileForOfficial_Click(object sender, EventArgs e) {
+            //Adicionar um item selecionado para a playlist oficial
+            officialPlaylist.Items.Add(listPlayList.SelectedItem);
+            //Removendo o item da playlist provisoria
+            int i = 0;
+            i = listPlayList.SelectedIndex;
+            listPlayList.Items.RemoveAt(i);
+        }
+
+        private void oneFileForProvisional_Click(object sender, EventArgs e) {
+            //Adicionar um item selecionado para a playlist provisoria
+            listPlayList.Items.Add(officialPlaylist.SelectedItem);
+            //Removendo o item da playlist oficial
+            int i = 0;
+            i = officialPlaylist.SelectedIndex;
+            officialPlaylist.Items.RemoveAt(i);
+        }
+
+        private void selectedFilesForOfficial_Click(object sender, EventArgs e) {
+            //Para cada item selecionado
+            foreach(var items in listPlayList.SelectedItems) {
+                //Adiciona cada item na playlist oficial
+                officialPlaylist.Items.Add(items);
+            }
+            //Para cada item selecionado na playlist provisoria 
+            for (int i = listPlayList.SelectedItems.Count -1; i >= 0; i--) {
+                //Remove o item na posição i
+                listPlayList.Items.Remove(listPlayList.SelectedItems[i]);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+            //Para cada item na playlist oficial
+            foreach (var items in officialPlaylist.Items) {
+                //Adiciona cada item na playlist provisoria
+                listPlayList.Items.Add(items);
+            }
+
+            officialPlaylist.Items.Clear();
+        }
+
+        private void listPlayList_SelectedIndexChanged(object sender, EventArgs e) {
+
+        }
+
+        private void officialPlaylist_DoubleClick(object sender, EventArgs e) {
+            //Se tem item na lista
+            if (officialPlaylist.Items.Count > 0) {
+                //Executando o arquivo
+                player.URL = officialPlaylist.SelectedItem.ToString();
+                player.Ctlcontrols.play();
+            }
         }
     }
 }

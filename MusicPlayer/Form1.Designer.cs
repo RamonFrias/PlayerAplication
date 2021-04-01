@@ -33,6 +33,13 @@ namespace MusicPlayer {
             this.btnClear = new System.Windows.Forms.Button();
             this.ofOpen = new System.Windows.Forms.OpenFileDialog();
             this.ofSave = new System.Windows.Forms.SaveFileDialog();
+            this.officialPlaylist = new System.Windows.Forms.ListBox();
+            this.oneFileForOfficial = new System.Windows.Forms.Button();
+            this.selectedFilesForOfficial = new System.Windows.Forms.Button();
+            this.oneFileForProvisional = new System.Windows.Forms.Button();
+            this.selecteFilesForProvisional = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,64 +49,143 @@ namespace MusicPlayer {
             this.player.Location = new System.Drawing.Point(12, 12);
             this.player.Name = "player";
             this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
-            this.player.Size = new System.Drawing.Size(475, 274);
+            this.player.Size = new System.Drawing.Size(909, 301);
             this.player.TabIndex = 0;
             this.player.Enter += new System.EventHandler(this.player_Enter);
             // 
             // listPlayList
             // 
             this.listPlayList.FormattingEnabled = true;
-            this.listPlayList.Location = new System.Drawing.Point(12, 292);
+            this.listPlayList.Location = new System.Drawing.Point(12, 319);
             this.listPlayList.Name = "listPlayList";
-            this.listPlayList.Size = new System.Drawing.Size(475, 147);
+            this.listPlayList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listPlayList.Size = new System.Drawing.Size(299, 238);
             this.listPlayList.TabIndex = 1;
+            this.listPlayList.SelectedIndexChanged += new System.EventHandler(this.listPlayList_SelectedIndexChanged);
             this.listPlayList.DoubleClick += new System.EventHandler(this.listPlayList_DoubleClick);
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(12, 445);
+            this.btnOpen.Location = new System.Drawing.Point(12, 563);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(75, 23);
+            this.btnOpen.Size = new System.Drawing.Size(70, 55);
             this.btnOpen.TabIndex = 2;
-            this.btnOpen.Text = "Open";
+            this.btnOpen.Text = "Open File";
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(105, 445);
+            this.btnSave.Location = new System.Drawing.Point(88, 563);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(66, 55);
             this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Save File";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(196, 445);
+            this.btnLoad.Location = new System.Drawing.Point(236, 563);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.Size = new System.Drawing.Size(75, 55);
             this.btnLoad.TabIndex = 4;
-            this.btnLoad.Text = "Load";
+            this.btnLoad.Text = "Load FIle";
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(287, 445);
+            this.btnClear.Location = new System.Drawing.Point(160, 563);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(70, 55);
             this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "Clear";
+            this.btnClear.Text = "Clear Provisional List";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // officialPlaylist
+            // 
+            this.officialPlaylist.FormattingEnabled = true;
+            this.officialPlaylist.Location = new System.Drawing.Point(623, 319);
+            this.officialPlaylist.Name = "officialPlaylist";
+            this.officialPlaylist.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.officialPlaylist.Size = new System.Drawing.Size(298, 238);
+            this.officialPlaylist.TabIndex = 6;
+            this.officialPlaylist.DoubleClick += new System.EventHandler(this.officialPlaylist_DoubleClick);
+            // 
+            // oneFileForOfficial
+            // 
+            this.oneFileForOfficial.Location = new System.Drawing.Point(424, 319);
+            this.oneFileForOfficial.Name = "oneFileForOfficial";
+            this.oneFileForOfficial.Size = new System.Drawing.Size(75, 23);
+            this.oneFileForOfficial.TabIndex = 7;
+            this.oneFileForOfficial.Text = ">";
+            this.oneFileForOfficial.UseVisualStyleBackColor = true;
+            this.oneFileForOfficial.Click += new System.EventHandler(this.oneFileForOfficial_Click);
+            // 
+            // selectedFilesForOfficial
+            // 
+            this.selectedFilesForOfficial.Location = new System.Drawing.Point(424, 348);
+            this.selectedFilesForOfficial.Name = "selectedFilesForOfficial";
+            this.selectedFilesForOfficial.Size = new System.Drawing.Size(75, 23);
+            this.selectedFilesForOfficial.TabIndex = 8;
+            this.selectedFilesForOfficial.Text = ">>";
+            this.selectedFilesForOfficial.UseVisualStyleBackColor = true;
+            this.selectedFilesForOfficial.Click += new System.EventHandler(this.selectedFilesForOfficial_Click);
+            // 
+            // oneFileForProvisional
+            // 
+            this.oneFileForProvisional.Location = new System.Drawing.Point(424, 377);
+            this.oneFileForProvisional.Name = "oneFileForProvisional";
+            this.oneFileForProvisional.Size = new System.Drawing.Size(75, 23);
+            this.oneFileForProvisional.TabIndex = 9;
+            this.oneFileForProvisional.Text = "<";
+            this.oneFileForProvisional.UseVisualStyleBackColor = true;
+            this.oneFileForProvisional.Click += new System.EventHandler(this.oneFileForProvisional_Click);
+            // 
+            // selecteFilesForProvisional
+            // 
+            this.selecteFilesForProvisional.Location = new System.Drawing.Point(424, 406);
+            this.selecteFilesForProvisional.Name = "selecteFilesForProvisional";
+            this.selecteFilesForProvisional.Size = new System.Drawing.Size(75, 23);
+            this.selecteFilesForProvisional.TabIndex = 10;
+            this.selecteFilesForProvisional.Text = "<<";
+            this.selecteFilesForProvisional.UseVisualStyleBackColor = true;
+            this.selecteFilesForProvisional.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(390, 435);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 31);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "To move all for official playlist";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(379, 472);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(176, 29);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "To move all for provisional playlist";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 477);
+            this.ClientSize = new System.Drawing.Size(933, 630);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.selecteFilesForProvisional);
+            this.Controls.Add(this.oneFileForProvisional);
+            this.Controls.Add(this.selectedFilesForOfficial);
+            this.Controls.Add(this.oneFileForOfficial);
+            this.Controls.Add(this.officialPlaylist);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnSave);
@@ -125,6 +211,13 @@ namespace MusicPlayer {
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.OpenFileDialog ofOpen;
         private System.Windows.Forms.SaveFileDialog ofSave;
+        private System.Windows.Forms.ListBox officialPlaylist;
+        private System.Windows.Forms.Button oneFileForOfficial;
+        private System.Windows.Forms.Button selectedFilesForOfficial;
+        private System.Windows.Forms.Button oneFileForProvisional;
+        private System.Windows.Forms.Button selecteFilesForProvisional;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
