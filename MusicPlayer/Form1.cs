@@ -41,8 +41,17 @@ namespace MusicPlayer {
                 foreach (var arquivo in ofOpen.FileNames) {
                     //Add cada item para a playlist
                     playList.appendItem(player.newMedia(arquivo));
-                    //Add na playlist
-                    listPlayList.Items.Add(arquivo);
+                    int i = 0;
+                    i = listPlayList.Items.Count;
+                    if (i == 0) {
+                        //Add na playlist
+                        listPlayList.Items.Add($"1 - {arquivo}");
+                    }
+                    else {
+                        i++;
+                        //Add na playlist
+                        listPlayList.Items.Add($"{i} - {arquivo}");
+                    }
                     //Dando o play na execução
                     player.currentPlaylist = playList;
                     player.Ctlcontrols.play();
@@ -152,12 +161,12 @@ namespace MusicPlayer {
 
         private void selectedFilesForOfficial_Click(object sender, EventArgs e) {
             //Para cada item selecionado
-            foreach(var items in listPlayList.SelectedItems) {
+            foreach (var items in listPlayList.SelectedItems) {
                 //Adiciona cada item na playlist oficial
                 officialPlaylist.Items.Add(items);
             }
             //Para cada item selecionado na playlist provisoria 
-            for (int i = listPlayList.SelectedItems.Count -1; i >= 0; i--) {
+            for (int i = listPlayList.SelectedItems.Count - 1; i >= 0; i--) {
                 //Remove o item na posição i
                 listPlayList.Items.Remove(listPlayList.SelectedItems[i]);
             }
@@ -186,7 +195,7 @@ namespace MusicPlayer {
             }
         }
 
-        private void removeSelectedFile_Click(object sender, EventArgs e) { 
+        private void removeSelectedFile_Click(object sender, EventArgs e) {
             //Para cada item selecionado na playlist provisoria 
             for (int i = listPlayList.SelectedItems.Count - 1; i >= 0; i--) {
                 //Remove o item na posição i
