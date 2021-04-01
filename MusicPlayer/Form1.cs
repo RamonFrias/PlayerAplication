@@ -185,5 +185,18 @@ namespace MusicPlayer {
                 player.Ctlcontrols.play();
             }
         }
+
+        private void removeSelectedFile_Click(object sender, EventArgs e) { 
+            //Para cada item selecionado na playlist provisoria 
+            for (int i = listPlayList.SelectedItems.Count - 1; i >= 0; i--) {
+                //Remove o item na posição i
+                listPlayList.Items.Remove(listPlayList.SelectedItems[i]);
+            }
+
+            for (int i = officialPlaylist.SelectedItems.Count - 1; i >= 0; i--) {
+                //Remove o item na posição i
+                officialPlaylist.Items.Remove(officialPlaylist.SelectedItems[i]);
+            }
+        }
     }
 }
