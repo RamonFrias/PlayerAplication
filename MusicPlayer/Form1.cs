@@ -41,17 +41,7 @@ namespace MusicPlayer {
                 foreach (var arquivo in ofOpen.FileNames) {
                     //Add cada item para a playlist
                     playList.appendItem(player.newMedia(arquivo));
-                    int i = 0;
-                    i = listPlayList.Items.Count;
-                    if (i == 0) {
-                        //Add na playlist
-                        listPlayList.Items.Add($"1 - {arquivo}");
-                    }
-                    else {
-                        i++;
-                        //Add na playlist
-                        listPlayList.Items.Add($"{i} - {arquivo}");
-                    }
+                    listPlayList.Items.Add(arquivo);
                     //Dando o play na execução
                     player.currentPlaylist = playList;
                     player.Ctlcontrols.play();
