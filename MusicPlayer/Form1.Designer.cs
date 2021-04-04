@@ -41,6 +41,8 @@ namespace MusicPlayer {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.removeSelectedFile = new System.Windows.Forms.Button();
+            this.ProvisionalPlaylist = new System.Windows.Forms.TextBox();
+            this.officilaPlaylist = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,10 +59,10 @@ namespace MusicPlayer {
             // listPlayList
             // 
             this.listPlayList.FormattingEnabled = true;
-            this.listPlayList.Location = new System.Drawing.Point(12, 319);
+            this.listPlayList.Location = new System.Drawing.Point(12, 345);
             this.listPlayList.Name = "listPlayList";
             this.listPlayList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listPlayList.Size = new System.Drawing.Size(361, 238);
+            this.listPlayList.Size = new System.Drawing.Size(361, 212);
             this.listPlayList.TabIndex = 1;
             this.listPlayList.SelectedIndexChanged += new System.EventHandler(this.listPlayList_SelectedIndexChanged);
             this.listPlayList.DoubleClick += new System.EventHandler(this.listPlayList_DoubleClick);
@@ -108,10 +110,10 @@ namespace MusicPlayer {
             // officialPlaylist
             // 
             this.officialPlaylist.FormattingEnabled = true;
-            this.officialPlaylist.Location = new System.Drawing.Point(561, 319);
+            this.officialPlaylist.Location = new System.Drawing.Point(561, 345);
             this.officialPlaylist.Name = "officialPlaylist";
             this.officialPlaylist.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.officialPlaylist.Size = new System.Drawing.Size(360, 238);
+            this.officialPlaylist.Size = new System.Drawing.Size(360, 212);
             this.officialPlaylist.TabIndex = 6;
             this.officialPlaylist.DoubleClick += new System.EventHandler(this.officialPlaylist_DoubleClick);
             // 
@@ -185,11 +187,30 @@ namespace MusicPlayer {
             this.removeSelectedFile.UseVisualStyleBackColor = true;
             this.removeSelectedFile.Click += new System.EventHandler(this.removeSelectedFile_Click);
             // 
+            // ProvisionalPlaylist
+            // 
+            this.ProvisionalPlaylist.Location = new System.Drawing.Point(12, 319);
+            this.ProvisionalPlaylist.Name = "ProvisionalPlaylist";
+            this.ProvisionalPlaylist.Size = new System.Drawing.Size(361, 20);
+            this.ProvisionalPlaylist.TabIndex = 14;
+            this.ProvisionalPlaylist.Text = "                                        Provisional Playlist";
+            this.ProvisionalPlaylist.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // officilaPlaylist
+            // 
+            this.officilaPlaylist.Location = new System.Drawing.Point(561, 319);
+            this.officilaPlaylist.Name = "officilaPlaylist";
+            this.officilaPlaylist.Size = new System.Drawing.Size(360, 20);
+            this.officilaPlaylist.TabIndex = 15;
+            this.officilaPlaylist.Text = "                                             Official Playlist";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 630);
+            this.Controls.Add(this.officilaPlaylist);
+            this.Controls.Add(this.ProvisionalPlaylist);
             this.Controls.Add(this.removeSelectedFile);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -210,6 +231,7 @@ namespace MusicPlayer {
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -231,6 +253,8 @@ namespace MusicPlayer {
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button removeSelectedFile;
+        private System.Windows.Forms.TextBox ProvisionalPlaylist;
+        private System.Windows.Forms.TextBox officilaPlaylist;
     }
 }
 

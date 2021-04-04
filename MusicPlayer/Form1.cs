@@ -210,5 +210,9 @@ namespace MusicPlayer {
                 officialPlaylist.Items.Remove(officialPlaylist.SelectedItems[i]);
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e) {
+            
+        }
     }
 }
