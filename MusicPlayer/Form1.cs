@@ -97,9 +97,16 @@ namespace MusicPlayer {
             //Se tem item na lista
             if (listPlayList.Items.Count > 0) {
                 //Executando o arquivo
-                player.URL = listPlayList.SelectedItem.ToString();
-                player.Ctlcontrols.play();
+                if (listPlayList.SelectedItem == null) {
+                    player.Ctlcontrols.stop();
+                }
+                else {
+                    player.URL = listPlayList.SelectedItem.ToString();
+                    player.Ctlcontrols.play();
+                }
+
             }
+
         }
 
         private void btnClear_Click(object sender, EventArgs e) {
@@ -180,8 +187,14 @@ namespace MusicPlayer {
             //Se tem item na lista
             if (officialPlaylist.Items.Count > 0) {
                 //Executando o arquivo
-                player.URL = officialPlaylist.SelectedItem.ToString();
-                player.Ctlcontrols.play();
+                if (officialPlaylist.SelectedItem == null) {
+                    player.Ctlcontrols.stop();
+                }
+                else {
+                    player.URL = officialPlaylist.SelectedItem.ToString();
+                    player.Ctlcontrols.play();
+                }
+
             }
         }
 
