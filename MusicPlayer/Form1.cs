@@ -23,6 +23,14 @@ namespace MusicPlayer {
 
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void officialNumberPlaylist_SelectedIndexChanged(object sender, EventArgs e) {
+
+        }
+
         //Variavel da playlist
         WMPLib.IWMPPlaylist playList;
 
@@ -140,26 +148,32 @@ namespace MusicPlayer {
 
         private void oneFileForOfficial_Click(object sender, EventArgs e) {
             //Adicionar um item selecionado para a playlist oficial
+            int i = officialNumberPlaylist.Items.Count;
+            i++;
+            officialNumberPlaylist.Items.Add($"{i}-");
             officialPlaylist.Items.Add(listPlayList.SelectedItem);
             //Removendo o item da playlist provisoria
-            int i = 0;
-            i = listPlayList.SelectedIndex;
-            listPlayList.Items.RemoveAt(i);
+            int z = 0;
+            z = listPlayList.SelectedIndex;
+            listPlayList.Items.RemoveAt(z);
         }
 
         private void oneFileForProvisional_Click(object sender, EventArgs e) {
             //Adicionar um item selecionado para a playlist provisoria
             listPlayList.Items.Add(officialPlaylist.SelectedItem);
             //Removendo o item da playlist oficial
-            int i = 0;
-            i = officialPlaylist.SelectedIndex;
-            officialPlaylist.Items.RemoveAt(i);
+            int z = 0;
+            z = officialPlaylist.SelectedIndex;
+            officialPlaylist.Items.RemoveAt(z);
         }
 
         private void selectedFilesForOfficial_Click(object sender, EventArgs e) {
             //Para cada item selecionado
             foreach (var items in listPlayList.SelectedItems) {
                 //Adiciona cada item na playlist oficial
+                int i = officialNumberPlaylist.Items.Count;
+                i++;
+                officialNumberPlaylist.Items.Add($"{i}");
                 officialPlaylist.Items.Add(items);
             }
             //Para cada item selecionado na playlist provisoria 
@@ -211,8 +225,6 @@ namespace MusicPlayer {
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e) {
-            
-        }
+        
     }
 }
