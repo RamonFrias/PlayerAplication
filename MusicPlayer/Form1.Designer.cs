@@ -43,7 +43,6 @@ namespace MusicPlayer {
             this.removeSelectedFile = new System.Windows.Forms.Button();
             this.ProvisionalPlaylist = new System.Windows.Forms.TextBox();
             this.officilaPlaylist = new System.Windows.Forms.TextBox();
-            this.officialNumberPlaylist = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,16 +110,16 @@ namespace MusicPlayer {
             // officialPlaylist
             // 
             this.officialPlaylist.FormattingEnabled = true;
-            this.officialPlaylist.Location = new System.Drawing.Point(590, 345);
+            this.officialPlaylist.Location = new System.Drawing.Point(561, 345);
             this.officialPlaylist.Name = "officialPlaylist";
             this.officialPlaylist.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.officialPlaylist.Size = new System.Drawing.Size(331, 212);
+            this.officialPlaylist.Size = new System.Drawing.Size(360, 212);
             this.officialPlaylist.TabIndex = 6;
             this.officialPlaylist.DoubleClick += new System.EventHandler(this.officialPlaylist_DoubleClick);
             // 
             // oneFileForOfficial
             // 
-            this.oneFileForOfficial.Location = new System.Drawing.Point(401, 319);
+            this.oneFileForOfficial.Location = new System.Drawing.Point(417, 319);
             this.oneFileForOfficial.Name = "oneFileForOfficial";
             this.oneFileForOfficial.Size = new System.Drawing.Size(85, 36);
             this.oneFileForOfficial.TabIndex = 7;
@@ -130,7 +129,7 @@ namespace MusicPlayer {
             // 
             // selectedFilesForOfficial
             // 
-            this.selectedFilesForOfficial.Location = new System.Drawing.Point(401, 361);
+            this.selectedFilesForOfficial.Location = new System.Drawing.Point(417, 361);
             this.selectedFilesForOfficial.Name = "selectedFilesForOfficial";
             this.selectedFilesForOfficial.Size = new System.Drawing.Size(85, 37);
             this.selectedFilesForOfficial.TabIndex = 8;
@@ -140,7 +139,7 @@ namespace MusicPlayer {
             // 
             // oneFileForProvisional
             // 
-            this.oneFileForProvisional.Location = new System.Drawing.Point(401, 404);
+            this.oneFileForProvisional.Location = new System.Drawing.Point(417, 404);
             this.oneFileForProvisional.Name = "oneFileForProvisional";
             this.oneFileForProvisional.Size = new System.Drawing.Size(85, 37);
             this.oneFileForProvisional.TabIndex = 9;
@@ -150,7 +149,7 @@ namespace MusicPlayer {
             // 
             // selecteFilesForProvisional
             // 
-            this.selecteFilesForProvisional.Location = new System.Drawing.Point(401, 447);
+            this.selecteFilesForProvisional.Location = new System.Drawing.Point(417, 447);
             this.selecteFilesForProvisional.Name = "selecteFilesForProvisional";
             this.selecteFilesForProvisional.Size = new System.Drawing.Size(85, 35);
             this.selecteFilesForProvisional.TabIndex = 10;
@@ -180,7 +179,7 @@ namespace MusicPlayer {
             // 
             // removeSelectedFile
             // 
-            this.removeSelectedFile.Location = new System.Drawing.Point(379, 488);
+            this.removeSelectedFile.Location = new System.Drawing.Point(390, 488);
             this.removeSelectedFile.Name = "removeSelectedFile";
             this.removeSelectedFile.Size = new System.Drawing.Size(133, 32);
             this.removeSelectedFile.TabIndex = 13;
@@ -205,21 +204,11 @@ namespace MusicPlayer {
             this.officilaPlaylist.TabIndex = 15;
             this.officilaPlaylist.Text = "                                             Official Playlist";
             // 
-            // officialNumberPlaylist
-            // 
-            this.officialNumberPlaylist.FormattingEnabled = true;
-            this.officialNumberPlaylist.Location = new System.Drawing.Point(561, 345);
-            this.officialNumberPlaylist.Name = "officialNumberPlaylist";
-            this.officialNumberPlaylist.Size = new System.Drawing.Size(33, 212);
-            this.officialNumberPlaylist.TabIndex = 16;
-            this.officialNumberPlaylist.SelectedIndexChanged += new System.EventHandler(this.officialNumberPlaylist_SelectedIndexChanged);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 630);
-            this.Controls.Add(this.officialNumberPlaylist);
             this.Controls.Add(this.officilaPlaylist);
             this.Controls.Add(this.ProvisionalPlaylist);
             this.Controls.Add(this.removeSelectedFile);
@@ -266,7 +255,6 @@ namespace MusicPlayer {
         private System.Windows.Forms.Button removeSelectedFile;
         private System.Windows.Forms.TextBox ProvisionalPlaylist;
         private System.Windows.Forms.TextBox officilaPlaylist;
-        private System.Windows.Forms.ListBox officialNumberPlaylist;
     }
 }
 

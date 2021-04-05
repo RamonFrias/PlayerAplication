@@ -139,41 +139,60 @@ namespace MusicPlayer {
         private void button1_Click_1(object sender, EventArgs e) {
             //Paraos items na playlist provisoria
             foreach (var items in listPlayList.Items) {
+                int i = officialPlaylist.Items.Count;
+                i /= 2;
+                i++;
+                officialPlaylist.Items.Add($"{i}-");
                 //Adiciona os items na playlist oficial
                 officialPlaylist.Items.Add(items);
+                //Adiciona uma sequencia de números para as músicas
             }
 
             listPlayList.Items.Clear();
         }
 
         private void oneFileForOfficial_Click(object sender, EventArgs e) {
-            //Adicionar um item selecionado para a playlist oficial
-            int i = officialNumberPlaylist.Items.Count;
-            i++;
-            officialNumberPlaylist.Items.Add($"{i}-");
-            officialPlaylist.Items.Add(listPlayList.SelectedItem);
-            //Removendo o item da playlist provisoria
-            int z = 0;
-            z = listPlayList.SelectedIndex;
-            listPlayList.Items.RemoveAt(z);
+            if (listPlayList.SelectedItem == null) {
+                player.Ctlcontrols.stop();
+            }
+            else {
+                //Adicionar um item selecionado para a playlist oficial
+                int i = officialPlaylist.Items.Count;
+                i /= 2;
+                i++;
+                officialPlaylist.Items.Add($"{i}-");
+                officialPlaylist.Items.Add(listPlayList.SelectedItem);
+                //Removendo o item da playlist provisoria
+                int z = 0;
+                z = listPlayList.SelectedIndex;
+                listPlayList.Items.RemoveAt(z);
+            }
+
         }
 
         private void oneFileForProvisional_Click(object sender, EventArgs e) {
-            //Adicionar um item selecionado para a playlist provisoria
-            listPlayList.Items.Add(officialPlaylist.SelectedItem);
-            //Removendo o item da playlist oficial
-            int z = 0;
-            z = officialPlaylist.SelectedIndex;
-            officialPlaylist.Items.RemoveAt(z);
+            if (officialPlaylist.SelectedItem == null) {
+                player.Ctlcontrols.stop();
+            }
+            else {
+                //Adicionar um item selecionado para a playlist provisoria
+                listPlayList.Items.Add(officialPlaylist.SelectedItem);
+                //Removendo o item da playlist oficial
+                int z = 0;
+                z = officialPlaylist.SelectedIndex;
+                officialPlaylist.Items.RemoveAt(z);
+            }
+
         }
 
         private void selectedFilesForOfficial_Click(object sender, EventArgs e) {
             //Para cada item selecionado
             foreach (var items in listPlayList.SelectedItems) {
                 //Adiciona cada item na playlist oficial
-                int i = officialNumberPlaylist.Items.Count;
+                int i = officialPlaylist.Items.Count;
+                i /= 2;
                 i++;
-                officialNumberPlaylist.Items.Add($"{i}");
+                officialPlaylist.Items.Add($"{i}-");
                 officialPlaylist.Items.Add(items);
             }
             //Para cada item selecionado na playlist provisoria 
@@ -225,6 +244,6 @@ namespace MusicPlayer {
             }
         }
 
-        
+
     }
 }
