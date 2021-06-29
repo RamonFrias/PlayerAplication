@@ -28,3 +28,7 @@ C:\Users\Ramon\Desktop\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.csproj.Gene
 C:\Users\Ramon\Desktop\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.csproj.CoreCompileInputs.cache
 C:\Users\Ramon\Desktop\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.exe
 C:\Users\Ramon\Desktop\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.pdb
+C:\Users\Ramon\Desktop\MusicPlayer\MusicPlayer\bin\Debug\MusicPlayer.exe.manifest
+C:\Users\Ramon\Desktop\MusicPlayer\MusicPlayer\bin\Debug\MusicPlayer.application
+C:\Users\Ramon\Desktop\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.exe.manifest
+C:\Users\Ramon\Desktop\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.application

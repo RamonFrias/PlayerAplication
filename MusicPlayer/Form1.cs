@@ -203,7 +203,12 @@ namespace MusicPlayer {
         }
 
         private void button2_Click(object sender, EventArgs e) {
+            int numberRemove = 0;
             //Para cada item na playlist oficial
+            for (int i = 0; i < officialPlaylist.Items.Count; i++) {
+                officialPlaylist.Items.RemoveAt(numberRemove);
+                numberRemove += 2;
+            }
             foreach (var items in officialPlaylist.Items) {
                 //Adiciona cada item na playlist provisoria
                 listPlayList.Items.Add(items);
